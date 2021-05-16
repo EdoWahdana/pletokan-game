@@ -6,9 +6,10 @@ public class PlayerJoystickController : MonoBehaviour
 {
     // Define Gameobject
     public FixedJoystick moveJoystick;
+    public FixedTouchField touchField;
 
     // Define player properties
-    public float moveSpeed;
+    public float moveSpeed = .2f;
 
     void Update()
     {
@@ -19,6 +20,7 @@ public class PlayerJoystickController : MonoBehaviour
     {
         float hoz = moveJoystick.Horizontal;
         float ver = moveJoystick.Vertical;
+
         Vector2 convertedXY = ConvertWithCamera(Camera.main.transform.position, hoz, ver);
         Vector3 direction = new Vector3(convertedXY.x, 0, convertedXY.y).normalized;
         transform.Translate(direction * moveSpeed, Space.World);
