@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d49af8694c5ff854eae4c1f1f307bdd8
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       1: 100000
@@ -202,7 +202,7 @@ ModelImporter:
       name: mat_deliveryman
     second: {fileID: 2100000, guid: c9bec74b55c30f34583fb170adb3ef8e, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -240,6 +240,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -264,14 +265,8 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 5c3f63b98162c9342800d2d845a2e7d3
-  - 16a7ff9113ccf714f83e200332b45ee5
-  - dd6e6df4cbc9d404487a32f64046edc3
-  - 4139518455ef43646a256e2ddf25508c
-  - ff9f545cddc6cca4abddee6cfefe9c00
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -289,8 +284,10 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 1
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

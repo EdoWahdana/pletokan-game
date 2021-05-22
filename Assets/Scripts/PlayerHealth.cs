@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [HideInInspector]
+    public int currentHealth;
+
+    public int startingHealth = 100;
     void Start()
+    {
+        currentHealth = startingHealth;
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        
+        gameObject.SetActive(false);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if(currentHealth <= 0)
+            Die();
     }
 }
