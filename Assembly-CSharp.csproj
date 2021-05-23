@@ -44,7 +44,8 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\FixedButton.cs" />
      <Compile Include="Assets\Scripts\FixedTouchField.cs" />
-     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Pletokan.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />

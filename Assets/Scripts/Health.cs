@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
 
     [HideInInspector]
-    public int currentHealth;
-
     public int startingHealth = 100;
+
+    public HealthBar healthBar;
+    public int currentHealth;
+    
     void Start()
     {
+        healthBar.SetMaxHealth(startingHealth);
         currentHealth = startingHealth;
-    }
-
-    void Update()
-    {
-        
     }
 
     private void Die()
@@ -27,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         if(currentHealth <= 0)
             Die();
     }
