@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: 
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
-    path: Assets/RPGPP_LT/Scene/Level 1.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 89b77bafa26b21846aebb02e3300ab9b
   m_configObjects: {}

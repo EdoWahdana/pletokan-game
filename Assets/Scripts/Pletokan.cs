@@ -13,14 +13,11 @@ public class Pletokan : MonoBehaviour
     [Range(1, 100)]
     private float damage = 1;
 
-    [SerializeField]
-    private Transform firePoint;
+    // [SerializeField]
+    // private ParticleSystem shootBurst;
 
-    [SerializeField]
-    private ParticleSystem shootBurst;
-
-    [SerializeField]
-    private AudioSource shootAudio;
+    // [SerializeField]
+    // private AudioSource shootAudio;
 
     private float timer;
     
