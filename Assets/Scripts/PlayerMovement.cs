@@ -65,21 +65,29 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if(isJump) {
-            Jump();
-            Debug.Log("Setelah JUMP" + gameObject.transform.position);
-            Vector3 groundPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 30, gameObject.transform.position.z);
-            Debug.Log("Setelah GroundPos" + gameObject.transform.position);
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, groundPos, Time.deltaTime);
-            Debug.Log("Setelah LERP" + gameObject.transform.position);
+            StartCoroutine("Jump");
+            StartCoroutine("Dejump");
+            // Debug.Log("Setelah JUMP" + gameObject.transform.position);
+            // Vector3 groundPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 30, gameObject.transform.position.z);
+            // Debug.Log("Setelah GroundPos" + gameObject.transform.position);
+            // gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, groundPos, Time.deltaTime);
+            // Debug.Log("Setelah LERP" + gameObject.transform.position);
             isJump = false;
         }
     }
 
-    private void Jump()
+    IEnumerator Dejump()
+    {
+        Vector3 dejumpPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 30, gameObject.transform.position.z);
+        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, dejumpPos, Time.deltaTime);
+        yield return new WaitForSeconds(2f);
+    }
+
+    IEnumerator Jump()
     {
         Vector3 jumpPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 30, gameObject.transform.position.z);
         gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, jumpPos, Time.deltaTime);
-        Debug.Log("JUMP");
+        yield return new WaitForSeconds(2f);
     }
     
 }

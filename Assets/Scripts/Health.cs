@@ -6,10 +6,10 @@ public class Health : MonoBehaviour
 {
 
     [HideInInspector]
-    public int startingHealth = 100;
-
-    public HealthBar healthBar;
     public int currentHealth;
+ 
+    public HealthBar healthBar;
+    public int startingHealth = 100;
     
     void Start()
     {
