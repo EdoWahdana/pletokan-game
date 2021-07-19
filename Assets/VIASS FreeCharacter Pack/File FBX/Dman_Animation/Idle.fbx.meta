@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 0c95092afa693aa438339bf7bcff5423
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: Idle
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 319
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Idle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_ROOTSHJnt
+      parentName: Idle(Clone)
+      position: {x: 0.005163753, y: 1.6728309, z: -0.03321238}
+      rotation: {x: 0.53556335, y: -0.47073656, z: 0.5274675, w: -0.46190602}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_Spline_01SHJnt
+      parentName: Dman_ROOTSHJnt
+      position: {x: -0.41971198, y: 0, z: 0}
+      rotation: {x: 0.0072590485, y: 0.001240521, z: 0.054084286, w: 0.9985092}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_Spline_02SHJnt
+      parentName: Dman_Spline_01SHJnt
+      position: {x: -0.42568198, y: 0, z: 0}
+      rotation: {x: 0.015521521, y: 0.007208919, z: 0.107972495, w: 0.9940066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_Spline_TopSHJnt
+      parentName: Dman_Spline_02SHJnt
+      position: {x: -0.377921, y: 0, z: 0}
+      rotation: {x: 0.048638284, y: -0.0005365386, z: 0.022039367, w: 0.9985731}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_head_TopSHJnt
+      parentName: Dman_Spline_TopSHJnt
+      position: {x: -0.40712002, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Arm_ClavicleSHJnt
+      parentName: Dman_Spline_02SHJnt
+      position: {x: -0, y: 0, z: -0.35741}
+      rotation: {x: 0.42964944, y: -0.39794078, z: 0.62739456, w: 0.5132451}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Arm_ShoulderSHJnt
+      parentName: Dman_l_Arm_ClavicleSHJnt
+      position: {x: -0.29812402, y: 0.063384, z: 0}
+      rotation: {x: -0.1458395, y: -0.13415991, z: -0.034027036, w: 0.9795786}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Arm_ElbowSHJnt
+      parentName: Dman_l_Arm_ShoulderSHJnt
+      position: {x: -0.99513996, y: 0, z: 0}
+      rotation: {x: 0.7921407, y: -0.012156037, z: 0.0044350494, w: -0.61020136}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Arm_WristSHJnt
+      parentName: Dman_l_Arm_ElbowSHJnt
+      position: {x: -0.544659, y: 0, z: 0}
+      rotation: {x: -0.28695458, y: 0.13672349, z: -0.009952387, w: 0.9480848}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Fingers_01_01SHJnt
+      parentName: Dman_l_Arm_WristSHJnt
+      position: {x: -0.46584898, y: -0.286138, z: 0.31669798}
+      rotation: {x: 0.74392676, y: 0.083778046, z: 0.094985604, w: 0.6561493}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Fingers_02_01SHJnt
+      parentName: Dman_l_Arm_WristSHJnt
+      position: {x: -0.602479, y: -0.03091, z: -0.082779996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Arm_ClavicleSHJnt
+      parentName: Dman_Spline_02SHJnt
+      position: {x: -0, y: 0, z: 0.35741}
+      rotation: {x: -0.40619612, y: -0.46552965, z: -0.5069424, w: 0.6010792}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Arm_ShoulderSHJnt
+      parentName: Dman_r_Arm_ClavicleSHJnt
+      position: {x: 0.29812402, y: -0.063384, z: 0}
+      rotation: {x: 0.26816556, y: -0.12358411, z: 0.034404095, w: 0.9547935}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Arm_ElbowSHJnt
+      parentName: Dman_r_Arm_ShoulderSHJnt
+      position: {x: 0.99513996, y: 0, z: 0}
+      rotation: {x: -0.35526636, y: -0.007060921, z: -0.011061718, w: 0.93467295}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Arm_WristSHJnt
+      parentName: Dman_r_Arm_ElbowSHJnt
+      position: {x: 0.544659, y: 0, z: 0}
+      rotation: {x: -0.12297133, y: 0.2613513, z: 0.06438382, w: 0.95521116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Fingers_01_01SHJnt
+      parentName: Dman_r_Arm_WristSHJnt
+      position: {x: 0.46584898, y: 0.286138, z: -0.31669798}
+      rotation: {x: 0.74392676, y: 0.083778046, z: 0.094985604, w: 0.6561493}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Fingers_02_01SHJnt
+      parentName: Dman_r_Arm_WristSHJnt
+      position: {x: 0.602479, y: 0.03091, z: 0.082779996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Leg_HipSHJnt
+      parentName: Dman_ROOTSHJnt
+      position: {x: 0.52279097, y: 0, z: -0.553531}
+      rotation: {x: -0.040804654, y: 0.76165843, z: -0.64154524, w: -0.0814327}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Leg_KneeSHJnt
+      parentName: Dman_l_Leg_HipSHJnt
+      position: {x: -0.467218, y: 0, z: 0}
+      rotation: {x: -0.08647435, y: -0.3172708, z: 0.026186349, w: 0.9440211}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Leg_AnkleSHJnt
+      parentName: Dman_l_Leg_KneeSHJnt
+      position: {x: -0.552648, y: 0, z: 0}
+      rotation: {x: 0.03771965, y: 0.20955561, z: 0.068883285, w: 0.9746378}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Leg_BallSHJnt
+      parentName: Dman_l_Leg_AnkleSHJnt
+      position: {x: -0.17699699, y: 0.021177001, z: 0.369072}
+      rotation: {x: 0.0007610498, y: 0.7083898, z: -0.0019892673, w: 0.7058183}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_l_Leg_ToeSHJnt
+      parentName: Dman_l_Leg_BallSHJnt
+      position: {x: -0.33762, y: 0.024307, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Leg_HipSHJnt
+      parentName: Dman_ROOTSHJnt
+      position: {x: 0.52279097, y: 0, z: 0.553531}
+      rotation: {x: -0.78174615, y: -0.06482507, z: -0.09310534, w: 0.6131901}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Leg_KneeSHJnt
+      parentName: Dman_r_Leg_HipSHJnt
+      position: {x: 0.467218, y: 0, z: 0}
+      rotation: {x: 0.0055350945, y: -0.30495974, z: 0.03876879, w: 0.9515597}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Leg_AnkleSHJnt
+      parentName: Dman_r_Leg_KneeSHJnt
+      position: {x: 0.552648, y: 0, z: 0}
+      rotation: {x: -0.008842137, y: 0.2262796, z: 0.026200444, w: 0.9736698}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Leg_BallSHJnt
+      parentName: Dman_r_Leg_AnkleSHJnt
+      position: {x: 0.17699699, y: -0.021177001, z: -0.369072}
+      rotation: {x: 0.00052942615, y: 0.69919974, z: 0.02608286, w: 0.71445024}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dman_r_Leg_ToeSHJnt
+      parentName: Dman_r_Leg_BallSHJnt
+      position: {x: 0.33762, y: -0.024307, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
