@@ -12,27 +12,26 @@ public class Sugeno : MonoBehaviour
     private bool skorBanyak, skorSedang, skorSedikit;
     private bool healthBanyak, healthSedang, healthSedikit;
     private bool jarakJauh, jarakSedang, jarakDekat;
-    private int skor, health;
-    private float jarak;
+    public int skor, health;
+    public float jarak;
+
 
     void Awake()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         gameManage = GameObject.FindGameObjectWithTag("GameManage").GetComponent<GameManage>();
-        npcManage = GameObject.FindGameObjectWithTag("NPCManage").GetComponent<NPCManage>();
     }
 
-    void Start()
+    void Update()
     {
         skor = gameManage.playerScore;
         health = playerHealth.currentHealth;
-        jarak = npcManage.m_tempDist;
 
         //Inisiasi range skor
         skorSedikit = (skor >= 0 && skor <= 50) ? true : false;
         skorSedang = (skor >= 20 && skor <= 80) ? true : false;
         skorBanyak = (skor >= 50 && skor <= 100) ? true : false;
-        
+
         //Inisiasi range health
         healthSedikit = (health >= 0 && health <= 45) ? true : false;
         healthSedang = (health >= 35 && health <= 70) ? true : false;
@@ -51,7 +50,7 @@ public class Sugeno : MonoBehaviour
         else if (skorBanyak && healthBanyak && jarakSedang)
             return "Kabur";
         else if (skorBanyak && healthBanyak && jarakDekat)
-            return "Menyerang";
+            return "Kabur";
         else if (skorBanyak && healthSedang && jarakJauh)
             return "Diam";
         else if (skorBanyak && healthSedang && jarakSedang)

@@ -5,14 +5,17 @@ using UnityEngine.AI;
 
 public class NPCManage : MonoBehaviour
 {
+    [HideInInspector]
+    public Transform dest2;
+
+    Animator[] animator;
     GameObject[] npc;
     Transform[] startPos;
     Transform[] dest1;
-    [HideInInspector]
-    public Transform dest2;
     Transform[] _npc;
     Vector3[] destPoint;
 
+    List<EnemyHealth> enemyHealthList = new List<EnemyHealth>();
     List<Transform> startPosList = new List<Transform>();
     List<Transform> dest1List = new List<Transform>();
     List<Vector3> destPointList = new List<Vector3>();
@@ -25,7 +28,7 @@ public class NPCManage : MonoBehaviour
     public GameObject enemyLevel2;
     public GameObject enemyLevel3;
     public GameObject[] spawnArea;
-    public float speedEnemy;
+    private float speedEnemy;
     public float m_tempDist;
 
     private Sugeno sugeno;
@@ -34,12 +37,16 @@ public class NPCManage : MonoBehaviour
     private EnemyHealth[] enemyHealth;
     private GameObject[] enemies;
     private GameObject enemy;
-    private Collider destCollider1;
-    private Bounds destBounds1;
-    private int level, getLevel, countEnemy, m_tempCountEnemy, m_hitTimer = 0, m_hitDelay = 3;
+    private Collider destCollider2;
+    private Bounds destBounds2;
+    private float spawnPoint = 2f;
+    private int level, getLevel, countEnemy, m_tempCountEnemy;
+    private float m_hitDelay = speedAttack;
+    private static float speedAttack = 3f;
+    
+    [HideInInspector]
+    public bool isOver = false;
 
-    [SerializeField]
-    float spawnPoint;
 
     public GameObject padiGroup1;
     public GameObject padiGroup2;
@@ -74,16 +81,24 @@ public class NPCManage : MonoBehaviour
         //Ieu jeung nentukeun jumlah NPC
         switch (level)
         {
-            case 0: countEnemy = 5; break;
-            case 1: countEnemy = 7; break;
-            case 2: countEnemy = 9; break;
-            case 3: countEnemy = 5; break;
-            case 4: countEnemy = 7; break;
-            case 5: countEnemy = 9; break;
-            case 6: countEnemy = 5; break;
-            case 7: countEnemy = 7; break;
-            case 8: countEnemy = 9; break;
+            case 0: case 3: case 6: countEnemy = 5; break;
+            case 1: case 4: case 7: countEnemy = 7; break;
+            case 2: case 5: case 8: countEnemy = 9; break;
             default: countEnemy = 0; break;
+        }
+
+        //Ieu jeung nentukeun speed NPC
+        switch (level){
+            case 0: speedEnemy = 1.5f; break;
+            case 1: speedEnemy = 2f; break;
+            case 2: speedEnemy = 2.5f; break;
+            case 3: speedEnemy = 2.5f; break;
+            case 4: speedEnemy = 3f; break;
+            case 5: speedEnemy = 3.5f; break;
+            case 6: speedEnemy = 3.5f; break;
+            case 7: speedEnemy = 4f; break;
+            case 8: speedEnemy = 5f; break;
+            default: speedEnemy = 0f; break;
         }
 
         m_tempCountEnemy = countEnemy;
@@ -105,60 +120,80 @@ public class NPCManage : MonoBehaviour
         _npc = new Transform[npc.Length];
         destPoint = new Vector3[npc.Length];
         enemyHealth = new EnemyHealth[npc.Length];
-        destCollider1 = destination1.GetComponent<BoxCollider>();
-        destBounds1 = destCollider1.bounds;
+        destCollider2 = GameObject.FindGameObjectWithTag("Destination").GetComponent<BoxCollider>();
+        destBounds2 = destCollider2.bounds;
+        animator = new Animator[npc.Length];
 
         for (int i = 0; i < npc.Length; i++)
         {
             startPos[i] = npc[i].GetComponent<Transform>();
             startPosList.Add(startPos[i]);
-            dest1[i] = fw.dest1[i];
+            dest1[i] = fw.dest1[i+6];
             dest1List.Add(dest1[i]);
             destPoint[i] = dest1[i].position;
             destPointList.Add(destPoint[i]);
             enemyHealth[i] = npc[i].GetComponentInChildren<EnemyHealth>();
+            enemyHealthList.Add(enemyHealth[i]);
             agents[i] = npc[i].GetComponent<NavMeshAgent>();
             agentsList.Add(agents[i]);
             _npc[i] = npc[i].GetComponent<Transform>();
             _npcList.Add(_npc[i]);
-            agents[i].destination = dest1List[i].position;
+            //agents[i].destination = dest1List[i].position;
             agents[i].speed = speedEnemy;
+            animator[i] = agents[i].GetComponent<Animator>();
         }
     }
 
     void Update()
     {
-        m_hitTimer += (int) Time.deltaTime;
         if(agentsList.Count != 0) {
             for (int i = 0; i < npc.Length; i++)
             {
-                if (enemyHealth[i])
+                if (enemyHealthList[i].currentHealth > 0)
                 {
-                    m_tempDist = Vector3.Distance(enemyHealth[i].transform.position, playerHealth.transform.position);
+                    m_tempDist = Vector3.Distance(agentsList[i].transform.position, playerHealth.transform.position);
                     if (sugeno.Logic() == "Kabur")
                     {
-                        Debug.Log("Kabur");
-                        float x = Random.Range(destBounds1.min.x, destBounds1.max.x);
-                        float y = enemyHealth[i].transform.position.y;
-                        float z = Random.Range(destBounds1.min.z, destBounds1.max.z);
-                        Vector3 newDest = new Vector3(x, y, z);
-                        agentsList[i].speed = 1;
-                        agentsList[i].Warp(enemyHealth[i].transform.position);
-                        agentsList[i].SetDestination(newDest);
-                        //ShortPathFinding(dest1List[i], newDest, destPointList[i], agentsList[i]);
+                        float dist = Vector3.Distance(playerHealth.transform.position, agentsList[i].transform.position);
+                        Vector3 newDest = new Vector3(dist + 20, enemyHealth[i].transform.parent.position.y, dist + 20);
+                        agentsList[i].speed = speedEnemy;
+                        agentsList[i].destination = newDest;
                     }
                     else if (sugeno.Logic() == "Diam") { 
-                        Debug.Log("Diam");
-                        ShortPathFinding(dest1List[i], dest2.position, destPointList[i], agentsList[i]);
+                        agentsList[i].destination = agentsList[i].transform.position;
                     }
-                    else if (sugeno.Logic() == "Menyerang") { 
-                        Debug.Log("Menyerang");
-                        ShortPathFinding(dest1List[i], dest2.position, destPointList[i], agentsList[i]);
-                    } 
-                }
+                    else if (sugeno.Logic() == "Menyerang") {
+                        ShortPathFinding(dest1List[i], dest2.position, destPoint[i], agentsList[i]);
+                    }
 
-                if (agentsList[i] && agentsList[i].velocity.magnitude <= 2 && m_hitTimer >= m_hitDelay)
-                    HitPlayer();
+
+                    if ((Vector3.Distance(dest2.position, agentsList[i].transform.position)) <= 20f)
+                    {
+                        if(!isOver)
+                            AttackNPC();
+                        
+                        animator[i].SetBool("isAttack", true);
+                    }
+                    else {
+                        animator[i].SetBool("isAttack", false);
+                    }
+
+                } // End of enemyHealth check
+            }
+        }
+    }
+
+    private void ShortPathFinding(Transform _dest1, Vector3 _dest2, Vector3 _destPoint, NavMeshAgent _agent)
+    {
+        if (_agent)
+        {
+            _agent.destination = _dest1.position;
+            //Transform[] dest = { _dest1, _dest2 };
+            float dist = Vector3.Distance(_destPoint, _agent.transform.position);
+            if (dist < 2f)
+            {
+                _agent.SetDestination(_dest2);
+                _agent.speed = speedEnemy;
             }
         }
     }
@@ -178,10 +213,13 @@ public class NPCManage : MonoBehaviour
         }
     }
 
-    private void HitPlayer()
+    private void AttackNPC()
     {
-        m_hitTimer = 0;
-        playerHealth.TakeDamage(5);
+        m_hitDelay -= Time.deltaTime;
+        if(m_hitDelay <= 0f){
+            playerHealth.TakeDamage(5);
+            m_hitDelay = speedAttack;
+        }
     }
 
     private void SpawnEnemy()
@@ -205,15 +243,4 @@ public class NPCManage : MonoBehaviour
         }
     }
 
-    private void ShortPathFinding(Transform _dest1, Vector3 _dest2, Vector3 _destPoint, NavMeshAgent _agent)
-    {
-        if(_agent) {
-            //Transform[] dest = { _dest1, _dest2 };
-            float dist = Vector3.Distance(_destPoint, _agent.transform.position);
-            if (dist < 2f){ 
-                _agent.SetDestination(_dest2);
-                _agent.speed = speedEnemy;
-            }
-        }
-    }
 }

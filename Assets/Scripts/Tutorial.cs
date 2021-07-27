@@ -183,7 +183,7 @@ public class Tutorial : MonoBehaviour
 
     private void Fire()
     {
-        // shootBurst.Play();
+        //shootBurst.Play();
         shootAudio.PlayOneShot(shootAudio.clip);
 
         Ray ray = Camera.main.ViewportPointToRay(Vector3.one * .5f);

@@ -25,7 +25,6 @@ public class FloydWarshall
         }
         
         node = nodeList.ToArray();
-        Debug.Log("Node : " + node);
         minDist = new float[node.Length,npc.Length];
         dest = new Transform[node.Length, npc.Length];
 

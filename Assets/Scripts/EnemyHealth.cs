@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,30 +10,54 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
 
     public ParticleSystem enemyDestroy;
-    public EnemyHealthBar enemyHealthBar;
-    public int startingHealth;
+    int startingHealth = 100;
 
     private NPCManage npcManage;
     private Transform player;
     private float distance;
+
+    public GameObject canvasNPC;
+    private float waitTimeCanvasNPC = 1f;
+    private bool showCanvas;
+
+    public Slider slider;
     
     void Start()
     {
+        slider = slider.GetComponent<Slider>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         npcManage = GameObject.FindGameObjectWithTag("NPCManage").GetComponent<NPCManage>();
-        enemyHealthBar.SetEnemyMaxHealth(startingHealth);
         currentHealth = startingHealth;
+    }
+
+    void Update()
+    {
+        if (showCanvas){
+            waitTimeCanvasNPC -= Time.deltaTime;
+            canvasNPC.SetActive(true);
+            if(waitTimeCanvasNPC <= 0f){
+                canvasNPC.SetActive(false);
+                waitTimeCanvasNPC = 1f;
+                showCanvas = false;
+            }
+        }   
     }
 
     public void TakeDamage(int damage)
     {
+        showCanvas = true;
         currentHealth -= damage;
-        enemyHealthBar.SetEnemyHealth(currentHealth);
+        enemyDestroy.Play();
+        SetEnemyHealth(currentHealth);
         if(currentHealth <= 0) {
             npcManage.DecreaseEnemy();
-            enemyDestroy.Play();
             Destroy(transform.parent.gameObject);
         }
+    }
+
+    void SetEnemyHealth(int health)
+    {
+        slider.value = health;
     }
 
     public bool EnemyCheck()

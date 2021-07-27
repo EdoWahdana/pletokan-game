@@ -6,6 +6,8 @@ public class SoundSettings : MonoBehaviour
 {
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         int bgm = PlayerPrefs.GetInt("BGM");
         bool m = (bgm == 1) ? false : true;
         BGM(m);

@@ -36,4 +36,9 @@ public class CameraController : MonoBehaviour
     {
         camera.fieldOfView = 60f;
     }
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
 }

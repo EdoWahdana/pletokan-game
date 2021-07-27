@@ -82,7 +82,6 @@ public class Pletokan : MonoBehaviour
 
         if(Physics.Raycast(ray, out hitInfo, 100)) {
             var enemyHealth = hitInfo.collider.GetComponent<EnemyHealth>();
-            Debug.Log(enemyHealth);
             if(enemyHealth && enemyHealth.currentHealth != 0) {
                 enemyHealth.TakeDamage((int) damage);
             }
