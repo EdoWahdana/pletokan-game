@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 4598830937975451307}
   - component: {fileID: 7100812234056770700}
   - component: {fileID: 6367531731053709476}
+  - component: {fileID: 7037368035368913437}
   m_Layer: 0
   m_Name: bird
   m_TagString: NPC
@@ -171,6 +172,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7037368035368913437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790206743886836753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98104431994cd1540a158b0d0ed5a49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skor: 0
+  health: 0
+  jarak: 0
 --- !u!1 &5040142256537375052
 GameObject:
   m_ObjectHideFlags: 0

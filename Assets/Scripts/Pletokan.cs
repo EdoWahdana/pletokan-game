@@ -6,21 +6,16 @@ using UnityEngine.UI;
 public class Pletokan : MonoBehaviour
 {
 
-    
-    public float fireRate = .5f;
-
-    [SerializeField]
-    private ParticleSystem shootBurst;
-
+    public ParticleSystem shootBurst;
     public GameObject targetPointInactive;
     public GameObject targetPointActive;
     public AudioSource shootAudio;
     public Text ammoText;
-    public bool isShoot, isReload;
+    public float fireRate = .5f;
     public float ammo;
+    public bool isShoot, isReload;
 
     private float timer, maxAmmo, damage;
-
 
     void Awake()
     {

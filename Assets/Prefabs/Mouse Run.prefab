@@ -1309,6 +1309,7 @@ GameObject:
   - component: {fileID: 6110567276150807943}
   - component: {fileID: 362030904335238708}
   - component: {fileID: 5596626494266292210}
+  - component: {fileID: -1978887225228923337}
   m_Layer: 0
   m_Name: Mouse Run
   m_TagString: NPC
@@ -1375,6 +1376,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1978887225228923337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883409134837303101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98104431994cd1540a158b0d0ed5a49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skor: 0
+  health: 0
+  jarak: 0
 --- !u!1 &7020674341276584037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,12 +2310,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f722efda4e1e54ba7d851adf0e9e63, type: 3}
---- !u!1 &8118851859014516341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1655973262107347602, guid: 25f722efda4e1e54ba7d851adf0e9e63,
-    type: 3}
-  m_PrefabInstance: {fileID: 7372610466949919975}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3386223931594730118 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5237280173879008865, guid: 25f722efda4e1e54ba7d851adf0e9e63,
@@ -2318,3 +2328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8118851859014516341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1655973262107347602, guid: 25f722efda4e1e54ba7d851adf0e9e63,
+    type: 3}
+  m_PrefabInstance: {fileID: 7372610466949919975}
+  m_PrefabAsset: {fileID: 0}

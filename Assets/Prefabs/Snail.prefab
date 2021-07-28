@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 3884409033068295637}
   - component: {fileID: 3668604279663016952}
   - component: {fileID: 2164294797809284609}
+  - component: {fileID: -240926582150592265}
   m_Layer: 8
   m_Name: Snail
   m_TagString: NPC
@@ -709,6 +710,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-240926582150592265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247290363907867264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98104431994cd1540a158b0d0ed5a49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skor: 0
+  health: 0
+  jarak: 0
 --- !u!1 &8468183510424151970
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,15 +975,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25d718f4a5def14a854b4068303dae2, type: 3}
---- !u!4 &3491960331239207684 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8619757981124071421, guid: c25d718f4a5def14a854b4068303dae2,
-    type: 3}
-  m_PrefabInstance: {fileID: 5182067972184325369}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &3491960331225054660 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8619757981138223421, guid: c25d718f4a5def14a854b4068303dae2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5182067972184325369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3491960331239207684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8619757981124071421, guid: c25d718f4a5def14a854b4068303dae2,
     type: 3}
   m_PrefabInstance: {fileID: 5182067972184325369}
   m_PrefabAsset: {fileID: 0}

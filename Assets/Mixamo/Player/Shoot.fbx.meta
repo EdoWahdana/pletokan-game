@@ -56,12 +56,68 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dman_ROOTSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_l_Leg_HipSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_l_Leg_HipSHJnt/Dman_l_Leg_KneeSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_l_Leg_HipSHJnt/Dman_l_Leg_KneeSHJnt/Dman_l_Leg_AnkleSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_l_Leg_HipSHJnt/Dman_l_Leg_KneeSHJnt/Dman_l_Leg_AnkleSHJnt/Dman_l_Leg_BallSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_l_Leg_HipSHJnt/Dman_l_Leg_KneeSHJnt/Dman_l_Leg_AnkleSHJnt/Dman_l_Leg_BallSHJnt/Dman_l_Leg_ToeSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_r_Leg_HipSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_r_Leg_HipSHJnt/Dman_r_Leg_KneeSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_r_Leg_HipSHJnt/Dman_r_Leg_KneeSHJnt/Dman_r_Leg_AnkleSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_r_Leg_HipSHJnt/Dman_r_Leg_KneeSHJnt/Dman_r_Leg_AnkleSHJnt/Dman_r_Leg_BallSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_r_Leg_HipSHJnt/Dman_r_Leg_KneeSHJnt/Dman_r_Leg_AnkleSHJnt/Dman_r_Leg_BallSHJnt/Dman_r_Leg_ToeSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_l_Arm_ClavicleSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_l_Arm_ClavicleSHJnt/Dman_l_Arm_ShoulderSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_l_Arm_ClavicleSHJnt/Dman_l_Arm_ShoulderSHJnt/Dman_l_Arm_ElbowSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_l_Arm_ClavicleSHJnt/Dman_l_Arm_ShoulderSHJnt/Dman_l_Arm_ElbowSHJnt/Dman_l_Arm_WristSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_l_Arm_ClavicleSHJnt/Dman_l_Arm_ShoulderSHJnt/Dman_l_Arm_ElbowSHJnt/Dman_l_Arm_WristSHJnt/Dman_l_Fingers_01_01SHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_l_Arm_ClavicleSHJnt/Dman_l_Arm_ShoulderSHJnt/Dman_l_Arm_ElbowSHJnt/Dman_l_Arm_WristSHJnt/Dman_l_Fingers_02_01SHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_r_Arm_ClavicleSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_r_Arm_ClavicleSHJnt/Dman_r_Arm_ShoulderSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_r_Arm_ClavicleSHJnt/Dman_r_Arm_ShoulderSHJnt/Dman_r_Arm_ElbowSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_r_Arm_ClavicleSHJnt/Dman_r_Arm_ShoulderSHJnt/Dman_r_Arm_ElbowSHJnt/Dman_r_Arm_WristSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_r_Arm_ClavicleSHJnt/Dman_r_Arm_ShoulderSHJnt/Dman_r_Arm_ElbowSHJnt/Dman_r_Arm_WristSHJnt/Dman_r_Fingers_01_01SHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_r_Arm_ClavicleSHJnt/Dman_r_Arm_ShoulderSHJnt/Dman_r_Arm_ElbowSHJnt/Dman_r_Arm_WristSHJnt/Dman_r_Fingers_02_01SHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_Spline_TopSHJnt
+        weight: 1
+      - path: Dman_ROOTSHJnt/Dman_Spline_01SHJnt/Dman_Spline_02SHJnt/Dman_Spline_TopSHJnt/Dman_head_TopSHJnt
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 7040c85d365d50749b8cf93ef71ae6be, type: 2}
       additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
@@ -118,11 +174,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 70e6f7f1f3100bc40bd7a3d6bee5f0f8,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 2
   additionalBone: 0
   userData: 
   assetBundleName: 

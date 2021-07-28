@@ -20,12 +20,14 @@ public class Sugeno : MonoBehaviour
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         gameManage = GameObject.FindGameObjectWithTag("GameManage").GetComponent<GameManage>();
+        npcManage = GameObject.FindGameObjectWithTag("NPCManage").GetComponent<NPCManage>();
     }
 
     void Update()
     {
         skor = gameManage.playerScore;
         health = playerHealth.currentHealth;
+        jarak = Vector3.Distance(transform.position, playerHealth.transform.position);
 
         //Inisiasi range skor
         skorSedikit = (skor >= 0 && skor <= 50) ? true : false;

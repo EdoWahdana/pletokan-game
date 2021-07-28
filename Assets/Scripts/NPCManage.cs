@@ -31,7 +31,7 @@ public class NPCManage : MonoBehaviour
     private float speedEnemy;
     public float m_tempDist;
 
-    private Sugeno sugeno;
+    private Sugeno[] sugeno;
     private GameManage gameManage;
     private PlayerHealth playerHealth;
     private EnemyHealth[] enemyHealth;
@@ -46,7 +46,6 @@ public class NPCManage : MonoBehaviour
     
     [HideInInspector]
     public bool isOver = false;
-
 
     public GameObject padiGroup1;
     public GameObject padiGroup2;
@@ -109,7 +108,6 @@ public class NPCManage : MonoBehaviour
     {
         FloydWarshall fw = new FloydWarshall();
 
-        sugeno = GetComponent<Sugeno>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         gameManage = GameObject.FindGameObjectWithTag("GameManage").GetComponent<GameManage>();
         npc = GameObject.FindGameObjectsWithTag("NPC");
@@ -123,9 +121,11 @@ public class NPCManage : MonoBehaviour
         destCollider2 = GameObject.FindGameObjectWithTag("Destination").GetComponent<BoxCollider>();
         destBounds2 = destCollider2.bounds;
         animator = new Animator[npc.Length];
+        sugeno = new Sugeno[npc.Length];
 
         for (int i = 0; i < npc.Length; i++)
         {
+            sugeno[i] = npc[i].GetComponent<Sugeno>();
             startPos[i] = npc[i].GetComponent<Transform>();
             startPosList.Add(startPos[i]);
             dest1[i] = fw.dest1[i+6];
@@ -151,18 +151,20 @@ public class NPCManage : MonoBehaviour
             {
                 if (enemyHealthList[i].currentHealth > 0)
                 {
-                    m_tempDist = Vector3.Distance(agentsList[i].transform.position, playerHealth.transform.position);
-                    if (sugeno.Logic() == "Kabur")
+                    //m_tempDist = Vector3.Distance(enemyHealth[i].transform.position, playerHealth.transform.position);
+                    if (sugeno[i].Logic() == "Kabur")
                     {
                         float dist = Vector3.Distance(playerHealth.transform.position, agentsList[i].transform.position);
                         Vector3 newDest = new Vector3(dist + 20, enemyHealth[i].transform.parent.position.y, dist + 20);
                         agentsList[i].speed = speedEnemy;
-                        agentsList[i].destination = newDest;
+                        agentsList[i].SetDestination(newDest);
                     }
-                    else if (sugeno.Logic() == "Diam") { 
+                    else if (sugeno[i].Logic() == "Diam") {
+                        isOver = true;
                         agentsList[i].destination = agentsList[i].transform.position;
                     }
-                    else if (sugeno.Logic() == "Menyerang") {
+                    else if (sugeno[i].Logic() == "Menyerang") {
+                        isOver = false;
                         ShortPathFinding(dest1List[i], dest2.position, destPoint[i], agentsList[i]);
                     }
 
@@ -179,8 +181,8 @@ public class NPCManage : MonoBehaviour
                     }
 
                 } // End of enemyHealth check
-            }
-        }
+            } // End of for loop
+        } // End of agentList.Count
     }
 
     private void ShortPathFinding(Transform _dest1, Vector3 _dest2, Vector3 _destPoint, NavMeshAgent _agent)
