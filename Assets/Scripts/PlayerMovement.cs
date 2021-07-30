@@ -41,6 +41,15 @@ public class PlayerMovement : MonoBehaviour
     {
         analog = joystick.Direction;
 
+        //Jika zoom kurangi sensitivitas
+        if (cameraController.isZoom)
+        {
+            turnSpeed = 1f;
+        }
+        else {
+            turnSpeed = 5f;
+        }
+
         //Blok fungsi untuk shoot
         pletokan.isShoot = shootButton.Pressed;
         if (pletokan.isShoot){

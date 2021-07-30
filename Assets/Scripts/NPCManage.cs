@@ -23,12 +23,16 @@ public class NPCManage : MonoBehaviour
     NavMeshAgent[] agents;
     List<NavMeshAgent> agentsList = new List<NavMeshAgent>();
     List<Transform> _npcList = new List<Transform>();
-
+    
+    public GameObject padiGroup1;
+    public GameObject padiGroup2;
+    public GameObject padiGroup3;
+    public GameObject destination1;
+    public GameObject destination2;
     public GameObject enemyLevel1;
     public GameObject enemyLevel2;
     public GameObject enemyLevel3;
     public GameObject[] spawnArea;
-    private float speedEnemy;
     public float m_tempDist;
 
     private Sugeno[] sugeno;
@@ -38,21 +42,16 @@ public class NPCManage : MonoBehaviour
     private GameObject[] enemies;
     private GameObject enemy;
     private Collider destCollider2;
-    private Bounds destBounds2;
+    private float speedEnemy;
+    private bool isAttack = true;
     private float spawnPoint = 2f;
-    private int level, getLevel, countEnemy, m_tempCountEnemy;
     private float m_hitDelay = speedAttack;
+    private int level, getLevel, countEnemy, m_tempCountEnemy;
     private static float speedAttack = 3f;
     
     [HideInInspector]
     public bool isOver = false;
 
-    public GameObject padiGroup1;
-    public GameObject padiGroup2;
-    public GameObject padiGroup3;
-
-    public GameObject destination1;
-    public GameObject destination2;
 
     void Awake()
     {
@@ -119,7 +118,6 @@ public class NPCManage : MonoBehaviour
         destPoint = new Vector3[npc.Length];
         enemyHealth = new EnemyHealth[npc.Length];
         destCollider2 = GameObject.FindGameObjectWithTag("Destination").GetComponent<BoxCollider>();
-        destBounds2 = destCollider2.bounds;
         animator = new Animator[npc.Length];
         sugeno = new Sugeno[npc.Length];
 
@@ -151,20 +149,25 @@ public class NPCManage : MonoBehaviour
             {
                 if (enemyHealthList[i].currentHealth > 0)
                 {
-                    //m_tempDist = Vector3.Distance(enemyHealth[i].transform.position, playerHealth.transform.position);
+                    float dist = Vector3.Distance(playerHealth.transform.position, enemyHealthList[i].transform.position);
+                    Vector3 newDest;
                     if (sugeno[i].Logic() == "Kabur")
                     {
-                        float dist = Vector3.Distance(playerHealth.transform.position, agentsList[i].transform.position);
-                        Vector3 newDest = new Vector3(dist + 20, enemyHealth[i].transform.parent.position.y, dist + 20);
+                        if (enemyHealthList[i].transform.position.x < playerHealth.transform.position.x) {
+                            newDest = new Vector3(Random.Range(0, (dist * 2) - enemyHealthList[i].transform.position.x), enemyHealthList[i].transform.position.y, Random.Range(0, (dist * 2) - enemyHealthList[i].transform.position.z));
+                        } else { 
+                            newDest = new Vector3((dist * 2) + enemyHealthList[i].transform.position.x, enemyHealthList[i].transform.position.y, (dist * 2) + enemyHealthList[i].transform.position.z);
+                        }
+                        isAttack = false;
                         agentsList[i].speed = speedEnemy;
                         agentsList[i].SetDestination(newDest);
                     }
                     else if (sugeno[i].Logic() == "Diam") {
-                        isOver = true;
+                        isAttack = false;
                         agentsList[i].destination = agentsList[i].transform.position;
                     }
-                    else if (sugeno[i].Logic() == "Menyerang") {
-                        isOver = false;
+                    else if (sugeno[i].Logic() == "Menyerang") { 
+                        isAttack = true;
                         ShortPathFinding(dest1List[i], dest2.position, destPoint[i], agentsList[i]);
                     }
 
@@ -217,10 +220,12 @@ public class NPCManage : MonoBehaviour
 
     private void AttackNPC()
     {
-        m_hitDelay -= Time.deltaTime;
-        if(m_hitDelay <= 0f){
-            playerHealth.TakeDamage(5);
-            m_hitDelay = speedAttack;
+        if (isAttack) { 
+            m_hitDelay -= Time.deltaTime;
+            if(m_hitDelay <= 0f){
+                playerHealth.TakeDamage(5);
+                m_hitDelay = speedAttack;
+            }
         }
     }
 

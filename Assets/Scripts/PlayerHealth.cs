@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         }
         textHaveHealth.text = haveHealth.ToString();
         playerHealthBar = playerHealthBar.GetComponent<Slider>();
+        playerHealthBar.enabled = false;
         currentHealth = startingHealth;
         SetPlayerHealth(startingHealth);
     }

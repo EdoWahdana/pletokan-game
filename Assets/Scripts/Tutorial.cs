@@ -48,7 +48,7 @@ public class Tutorial : MonoBehaviour
     public GameObject popUpEndGame;
     private float popUpTimeEndGame = 6f;
 
-    private int targetCount = 1;
+    private int targetCount = 6;
 
     void Awake()
     {
@@ -125,7 +125,7 @@ public class Tutorial : MonoBehaviour
 
         Ray ray = Camera.main.ViewportPointToRay(Vector3.one * .5f);
         RaycastHit target;
-        if (Physics.Raycast(ray, out target, 100))
+        if (Physics.Raycast(ray, out target, 50))
         {
             if (target.transform.tag == "NPC")
             {
@@ -190,7 +190,7 @@ public class Tutorial : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 2);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, 100))
+        if (Physics.Raycast(ray, out hitInfo, 50))
         {
             if(hitInfo.collider.tag == "NPC")
             {

@@ -36,6 +36,9 @@ public class Shop : MonoBehaviour
         sliderDamage = sliderDamage.GetComponent<Slider>();
         sliderAmmoCapacity = sliderAmmoCapacity.GetComponent<Slider>();
 
+        sliderDamage.enabled = false;
+        sliderAmmoCapacity.enabled = false;
+
         sliderDamage.value = damage;
         textDamage.text = damage.ToString() + "%";
         sliderAmmoCapacity.value = ammoCapacity;
@@ -44,6 +47,7 @@ public class Shop : MonoBehaviour
         textHaveHealth.text = "You Have: " + haveHealth.ToString();
         coin = PlayerPrefs.GetFloat("coin");
         textCoin.text = "$" + ((int)coin).ToString();
+        
 
         buyHealthEffect = buyHealthEffect.GetComponent<AudioSource>();
         upWeaponsEffect = upWeaponsEffect.GetComponent<AudioSource>();
@@ -55,19 +59,14 @@ public class Shop : MonoBehaviour
         if (coin >= priceHealth){
             buyHealthEffect.PlayOneShot(buyHealthEffect.clip);
             PlayerPrefs.SetFloat("coin", coin-priceHealth);
-            float _c = PlayerPrefs.GetFloat("coin");
-            textCoin.text = "$" + ((int)_c).ToString();
             int _hh = PlayerPrefs.GetInt("havehealth");
             PlayerPrefs.SetInt("havehealth", _hh + 1);
-            int __hh = PlayerPrefs.GetInt("havehealth");
-            textHaveHealth.text = "You Have: " + __hh.ToString();
+            Start();
         } else{
             warning.PlayOneShot(warning.clip);
             textWarning.text = "Coin Anda Tidak Cukup!";
             isWarning = true;
         }
-
-        Start();
     }
 
     public void UpgradeWeapons()
@@ -79,16 +78,9 @@ public class Shop : MonoBehaviour
             if(_d != 100f && _ac != 100f){
                 upWeaponsEffect.PlayOneShot(upWeaponsEffect.clip);
                 PlayerPrefs.SetFloat("coin", coin - priceUpgradeWeapons);
-                float _c = PlayerPrefs.GetFloat("coin");
-                textCoin.text = "$" + ((int)_c).ToString();
                 PlayerPrefs.SetFloat("damage", _d + 10f);
                 PlayerPrefs.SetFloat("ammocapacity", _ac + 10f);
-                float __d = PlayerPrefs.GetFloat("damage");
-                float __ac = PlayerPrefs.GetFloat("ammocapacity");
-                sliderDamage.value = __d;
-                textDamage.text = __d.ToString() + "%";
-                sliderAmmoCapacity.value = __ac;
-                textAmmoCapacity.text = __ac.ToString() + "%";
+                Start();
 
             } else{
                 warning.PlayOneShot(warning.clip);
@@ -100,8 +92,6 @@ public class Shop : MonoBehaviour
             textWarning.text = "Coin Anda Tidak Cukup!";
             isWarning = true;
         }
-
-        Start();
     }
 
     void Update()

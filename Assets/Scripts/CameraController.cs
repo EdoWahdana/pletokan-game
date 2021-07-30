@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     private float maximumX = 90f;*/
 
     public float vertical;
+    public bool isZoom;
+
     new Camera camera;
 
     void Start()
@@ -29,11 +31,13 @@ public class CameraController : MonoBehaviour
 
     public void zoomIn()
     {
+        isZoom = true;
         camera.fieldOfView = 25f;
     }
 
     public void zoomOut()
     {
+        isZoom = false;
         camera.fieldOfView = 60f;
     }
 

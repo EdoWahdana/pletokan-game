@@ -14,7 +14,7 @@ public class Sugeno : MonoBehaviour
     private bool jarakJauh, jarakSedang, jarakDekat;
     public int skor, health;
     public float jarak;
-
+    public string rule;
 
     void Awake()
     {
@@ -25,6 +25,7 @@ public class Sugeno : MonoBehaviour
 
     void Update()
     {
+        rule = Logic();
         skor = gameManage.playerScore;
         health = playerHealth.currentHealth;
         jarak = Vector3.Distance(transform.position, playerHealth.transform.position);
@@ -39,10 +40,10 @@ public class Sugeno : MonoBehaviour
         healthSedang = (health >= 35 && health <= 70) ? true : false;
         healthBanyak = (health >= 60 && health <= 100) ? true : false;
 
-        //Inisiasi range jarak
-        jarakDekat = (jarak >= 0 && jarak <= 8) ? true : false;
-        jarakSedang = (jarak >= 6 && jarak <= 18) ? true : false;
-        jarakJauh = (jarak >= 16 && jarak <= 24) ? true : false;
+        //Inisiasi range jarak Note : udah diedit angkanya
+        jarakDekat = (jarak >= 0 && jarak <= 16) ? true : false;
+        jarakSedang = (jarak >= 16 && jarak <= 23) ? true : false;
+        jarakJauh = (jarak >= 24 && jarak <= 32) ? true : false;
     }
 
     public string Logic()
@@ -68,7 +69,7 @@ public class Sugeno : MonoBehaviour
         else if (skorSedang && healthBanyak && jarakJauh)
             return "Diam";
         else if (skorSedang && healthBanyak && jarakSedang)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedang && healthBanyak && jarakDekat)
             return "Kabur";
         else if (skorSedang && healthSedang && jarakJauh)
@@ -78,27 +79,27 @@ public class Sugeno : MonoBehaviour
         else if (skorSedang && healthSedang && jarakDekat)
             return "Menyerang";
         else if (skorSedang && healthSedikit && jarakJauh)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedang && healthSedikit && jarakSedang)
             return "Menyerang";
         else if (skorSedang && healthSedikit && jarakDekat)
-            return "Menyerang";
+            return "Kabur";
         else if (skorSedikit && healthBanyak && jarakJauh)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedikit && healthBanyak && jarakSedang)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedikit && healthBanyak && jarakDekat)
             return "Kabur";
         else if (skorSedikit && healthSedang && jarakJauh)
             return "Diam";
         else if (skorSedikit && healthSedang && jarakSedang)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedikit && healthSedang && jarakDekat)
-            return "Diam";
+            return "Kabur";
         else if (skorSedikit && healthSedikit && jarakJauh)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedikit && healthSedikit && jarakSedang)
-            return "Diam";
+            return "Menyerang";
         else if (skorSedikit && healthSedikit && jarakDekat)
             return "Menyerang";
 
