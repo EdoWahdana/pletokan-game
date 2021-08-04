@@ -3715,7 +3715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Benarkah..?? Hebat George..Buatlah pletokan yang bagus ya..
+  m_Text: Benarkah..?? Hebat Adam..Buatlah pletokan yang bagus ya..
 --- !u!222 &215825016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5844,7 +5844,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ohh..ada George..Hai George
+  m_Text: Ohh.. Adam..Hai Adam
 --- !u!222 &380625463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6449,7 +6449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kau sudah selesai bermain pletokannya George..??
+  m_Text: Kau sudah selesai bermain pletokannya Adam..??
 --- !u!222 &411560125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10099,7 +10099,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kau sudah mendapatkan bambunya George...??
+  m_Text: Kau sudah mendapatkan bambunya Adam...??
 --- !u!222 &569237621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12048,7 +12048,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pletokan George tersebut diberi nama "Stenan"
+  m_Text: Pletokan Adam tersebut diberi nama "Stenan"
 --- !u!222 &659964590
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12872,8 +12872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Akhirnya George pun berhasil membuat pletokannya sendiri dengan sedikit
-    modifikasi
+  m_Text: Akhirnya Adam pun berhasil membuat pletokannya sendiri dengan sedikit modifikasi
 --- !u!222 &720517005
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21902,7 +21901,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ohh...Kau mendapat bambu yang bagus George...
+  m_Text: Ohh...Kau mendapat bambu yang bagus...
 --- !u!222 &1212200689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25716,7 +25715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oh iya George, tolong ambilkan peralatan kakek di meja sebelah sana ya..
+  m_Text: Oh iya Adam, tolong ambilkan peralatan kakek di meja sebelah sana ya..
 --- !u!222 &1412444363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34023,7 +34022,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GEORGE
+  m_Text: ADAM
 --- !u!222 &1927427490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35221,7 +35220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &2056448106
 Animator:
   serializedVersion: 3
@@ -37590,7 +37589,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3088770733296992481}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436970648594864526
 GameObject:
@@ -37669,6 +37668,14 @@ Transform:
   m_Father: {fileID: 3522171864510182134}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &862189709252658308
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747574950932500531}
+  m_Mesh: {fileID: -5624863577063729912, guid: 5ec75d9babaa7a04081d25e0aefdfdbf, type: 3}
 --- !u!4 &1009296852193649015
 Transform:
   m_ObjectHideFlags: 0
@@ -38103,6 +38110,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.12265175, z: 0.04212005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7952585204634079529}
   - {fileID: 253551484536439823}
   m_Father: {fileID: 2402629308682791323}
   m_RootOrder: 0
@@ -38456,6 +38464,45 @@ Transform:
   m_Father: {fileID: 8089210440324278100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &4948506518841358674
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747574950932500531}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e2958c787c37bd049991db90255d6493, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &4997568567811030085
 GameObject:
   m_ObjectHideFlags: 0
@@ -38966,6 +39013,20 @@ Transform:
   m_Father: {fileID: 4070759879159222}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -49.272003, y: 4.8710003, z: -6.524}
+--- !u!4 &7952585204634079529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747574950932500531}
+  m_LocalRotation: {x: -0.67067695, y: 0.16111489, z: 0.19987589, w: 0.6959053}
+  m_LocalPosition: {x: -0.068, y: 0.889, z: 0.059}
+  m_LocalScale: {x: 35, y: 40, z: 40}
+  m_Children: []
+  m_Father: {fileID: 3088770733296992481}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7963139268457716018
 GameObject:
   m_ObjectHideFlags: 0
@@ -39169,6 +39230,24 @@ GameObject:
   - component: {fileID: 2917793626593684108}
   m_Layer: 0
   m_Name: mixamorig:RightArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &8747574950932500531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7952585204634079529}
+  - component: {fileID: 862189709252658308}
+  - component: {fileID: 4948506518841358674}
+  m_Layer: 0
+  m_Name: TopiSawah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
