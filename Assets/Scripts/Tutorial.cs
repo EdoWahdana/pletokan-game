@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
@@ -33,7 +34,6 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     private AudioSource shootAudio;
 
-    private float timer;
     public bool isShoot;
 
     public GameObject targetPointInactive;
@@ -50,18 +50,30 @@ public class Tutorial : MonoBehaviour
 
     private int targetCount = 6;
 
+    private int startAmmo = 1;
+    private int ammo;
+    public Text textAmmo;
+    public GameObject popUpReloadWarning;
+    private bool isReloadWarning;
+
     void Awake()
     {
+        ammo = startAmmo;
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         shootAudio = shootAudio.GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        textAmmo.text = ammo.ToString();
     }
 
     void Update()
     {
         analog = joystick.Direction;
 
-        isShoot = shootButton.Pressed;
+        //isShoot = shootButton.Pressed;
 
         if(!isShoot)
         {
@@ -89,19 +101,24 @@ public class Tutorial : MonoBehaviour
             HorizontalWalk();
         }
 
-
-        timer += Time.deltaTime;
-        if (timer >= fireRate)
+        if (isShoot)
         {
-            if (isShoot)
+            if(ammo >= 1)
             {
                 animator.SetBool("isShoot", true);
-                timer = 0f;
                 Fire();
+                ammo -= 1;
+                Start();
             }
+            else
+            {
+                isReloadWarning = true;
+            }
+
+            isShoot = false;
         }
 
-        if(isTarget == true){
+        if (isTarget == true){
             popUpHebat.SetActive(true);
             popUpTime -= Time.deltaTime;
             if (popUpTime <= 0)
@@ -120,6 +137,18 @@ public class Tutorial : MonoBehaviour
                 popUpCobaLagi.SetActive(false);
                 popUpTime = 1f;
                 isNotTarget = false;
+            }
+        }
+
+        if (isReloadWarning == true)
+        {
+            popUpReloadWarning.SetActive(true);
+            popUpTime -= Time.deltaTime;
+            if (popUpTime <= 0)
+            {
+                popUpReloadWarning.SetActive(false);
+                popUpTime = 1f;
+                isReloadWarning = false;
             }
         }
 
@@ -208,4 +237,17 @@ public class Tutorial : MonoBehaviour
             isNotTarget = true;
         }
     }
+
+
+    public void Shoot()
+    {
+        isShoot = true;
+    }
+
+    public void Reload()
+    {
+        ammo = startAmmo;
+        Start();
+    }
+
 }
