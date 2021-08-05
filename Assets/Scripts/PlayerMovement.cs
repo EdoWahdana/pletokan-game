@@ -73,13 +73,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isReload", false);
             waitReload = 1f;
         }
-        
-        if (pletokan.ammo == 0) {
-            animator.SetBool("isShoot", false);
-            pletokan.fireRate += waitReload;
-            Reload();
-            pletokan.fireRate = .5f;                        
-        } 
 
         var horizontal = touchField.TouchDist.x;
         var vertical = touchField.TouchDist.y;
