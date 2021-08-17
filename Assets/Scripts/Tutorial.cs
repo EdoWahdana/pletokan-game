@@ -28,10 +28,6 @@ public class Tutorial : MonoBehaviour
     private float moveSpeedToUse;
 
     [SerializeField]
-    [Range(0.5f, 1.5f)]
-    private float fireRate = 1f;
-
-    [SerializeField]
     private AudioSource shootAudio;
 
     public bool isShoot;
@@ -55,6 +51,9 @@ public class Tutorial : MonoBehaviour
     public Text textAmmo;
     public GameObject popUpReloadWarning;
     private bool isReloadWarning;
+
+    private bool isReload;
+    private float waitReload = 1f;
 
     void Awake()
     {
@@ -183,6 +182,22 @@ public class Tutorial : MonoBehaviour
                 SceneManager.LoadScene("CutScene");
             }
         }
+
+        //Blok fungsi untuk reload ammo
+        if (isReload)
+        {
+            animator.SetBool("isReload", true);
+            waitReload -= Time.deltaTime;
+            if (waitReload <= 0)
+            {
+                isReload = false;
+            }
+        }
+        else
+        {
+            animator.SetBool("isReload", false);
+            waitReload = 1f;
+        }
     }
 
     private void HorizontalWalk()
@@ -248,6 +263,7 @@ public class Tutorial : MonoBehaviour
     {
         ammo = startAmmo;
         Start();
+        isReload = true;
     }
 
 }

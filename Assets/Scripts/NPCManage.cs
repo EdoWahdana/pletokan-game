@@ -28,6 +28,7 @@ public class NPCManage : MonoBehaviour
     public GameObject padiGroup2;
     public GameObject padiGroup3;
     public GameObject destination1;
+    public GameObject[] attackArea;
     public GameObject destination2;
     public GameObject enemyLevel1;
     public GameObject enemyLevel2;
@@ -45,9 +46,9 @@ public class NPCManage : MonoBehaviour
     private float speedEnemy;
     private bool isAttack = true;
     private float spawnPoint = 2f;
-    private float m_hitDelay = speedAttack;
     private int level, getLevel, countEnemy, m_tempCountEnemy;
     private static float speedAttack = 3f;
+    private float m_hitDelay = speedAttack;
     
     [HideInInspector]
     public bool isOver = false;
@@ -93,9 +94,9 @@ public class NPCManage : MonoBehaviour
             case 3: speedEnemy = 2.5f; break;
             case 4: speedEnemy = 3f; break;
             case 5: speedEnemy = 3.5f; break;
-            case 6: speedEnemy = 3.5f; break;
-            case 7: speedEnemy = 4f; break;
-            case 8: speedEnemy = 5f; break;
+            case 6: speedEnemy = 4.5f; break;
+            case 7: speedEnemy = 5.5f; break;
+            case 8: speedEnemy = 6.5f; break;
             default: speedEnemy = 0f; break;
         }
 
@@ -172,8 +173,9 @@ public class NPCManage : MonoBehaviour
                     }
 
 
-                    if ((Vector3.Distance(dest2.position, agentsList[i].transform.position)) <= 20f)
-                    {
+                    if ((Vector3.Distance(attackArea[0].transform.position, agentsList[i].transform.position)) <= 23f
+                        || (Vector3.Distance(attackArea[1].transform.position, agentsList[i].transform.position)) <= 23f
+                        || (Vector3.Distance(dest2.position, agentsList[i].transform.position)) <= 20f){
                         if(!isOver)
                             AttackNPC();
                         

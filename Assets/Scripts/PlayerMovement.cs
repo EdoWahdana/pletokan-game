@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public FixedTouchField touchField;
     public FixedButton shootButton;
 
+    public GameObject[] attackArea;
+
 
     public float jumpPower = 5f;
 
@@ -30,8 +32,17 @@ public class PlayerMovement : MonoBehaviour
     private bool isReload;
     private float waitReload = 1f;
 
+    public bool isOver = false;
+    private static float speedAttack = 1.5f;
+    private float m_hitDelay = speedAttack;
+    private PlayerHealth playerHealth;
+    private int level;
+    public GameObject warning;
+
     void Awake() 
     {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        level = PlayerPrefs.GetInt("checklevel");
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         pletokan = GetComponentInChildren<Pletokan>();
@@ -93,7 +104,29 @@ public class PlayerMovement : MonoBehaviour
             HorizontalWalk();
         }
 
+        if(level < 6) {
+            if ((Vector3.Distance(attackArea[0].transform.position, gameObject.transform.position)) <= 25f
+                            || (Vector3.Distance(attackArea[1].transform.position, gameObject.transform.position)) <= 25f
+                            || (Vector3.Distance(attackArea[2].transform.position, gameObject.transform.position)) <= 20f) {
+                if (!isOver) {
+                    AttackPlayer();
+                    warning.SetActive(true);
+                }
+            } else {
+                warning.SetActive(false);
+            }
+        }
 
+    }
+
+    private void AttackPlayer()
+    {
+        m_hitDelay -= Time.deltaTime;
+        if (m_hitDelay <= 0f)
+        {
+            playerHealth.TakeDamage(10);
+            m_hitDelay = speedAttack;
+        }
     }
 
     private void HorizontalWalk()

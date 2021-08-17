@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     private GameManage gameManage;
     private NPCManage npcManage;
+    private PlayerMovement playerMovement;
 
     private int startingHealth = 100;
     private int haveHealth;
@@ -24,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
     {
         gameManage = GameObject.FindGameObjectWithTag("GameManage").GetComponent<GameManage>();
         npcManage = GameObject.FindGameObjectWithTag("NPCManage").GetComponent<NPCManage>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         haveHealth = PlayerPrefs.GetInt("havehealth");
         if (haveHealth == 0)
         {
@@ -52,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
         SetPlayerHealth(currentHealth);
         if (currentHealth <= 0) {
             npcManage.isOver = true;
+            playerMovement.isOver = true;
             gameManage.Lose();
         }
     }
