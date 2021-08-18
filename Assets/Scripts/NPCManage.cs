@@ -172,18 +172,37 @@ public class NPCManage : MonoBehaviour
                         ShortPathFinding(dest1List[i], dest2.position, destPoint[i], agentsList[i]);
                     }
 
+                    switch(level)
+                    {
+                        case 0: case 1: case 2: case 3: case 4: case 5:
+                            if ((Vector3.Distance(attackArea[0].transform.position, agentsList[i].transform.position)) <= 23f
+                            || (Vector3.Distance(attackArea[1].transform.position, agentsList[i].transform.position)) <= 23f
+                            || (Vector3.Distance(dest2.position, agentsList[i].transform.position)) <= 20f)
+                            {
+                                if (!isOver)
+                                    AttackNPC();
 
-                    if ((Vector3.Distance(attackArea[0].transform.position, agentsList[i].transform.position)) <= 23f
-                        || (Vector3.Distance(attackArea[1].transform.position, agentsList[i].transform.position)) <= 23f
-                        || (Vector3.Distance(dest2.position, agentsList[i].transform.position)) <= 20f){
-                        if(!isOver)
-                            AttackNPC();
-                        
-                        animator[i].SetBool("isAttack", true);
+                                animator[i].SetBool("isAttack", true);
+                            }
+                            else
+                            {
+                                animator[i].SetBool("isAttack", false);
+                            }; break;
+                        case 6: case 7: case 8:
+                            if ((Vector3.Distance(dest2.position, agentsList[i].transform.position)) <= 20f)
+                            {
+                                if (!isOver)
+                                    AttackNPC();
+
+                                animator[i].SetBool("isAttack", true);
+                            }
+                            else
+                            {
+                                animator[i].SetBool("isAttack", false);
+                            }; break;
+                        default: countEnemy = 0; break;
                     }
-                    else {
-                        animator[i].SetBool("isAttack", false);
-                    }
+
 
                 } // End of enemyHealth check
             } // End of for loop
