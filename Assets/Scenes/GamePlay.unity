@@ -15490,6 +15490,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 563561328}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &566883941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 566883942}
+  - component: {fileID: 566883944}
+  - component: {fileID: 566883943}
+  m_Layer: 8
+  m_Name: Spawn Area 6
+  m_TagString: SpawnArea
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &566883942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566883941}
+  m_LocalRotation: {x: -0.11670668, y: 0.0014050603, z: 0.018530801, w: 0.9929926}
+  m_LocalPosition: {x: 38.2, y: 2.6, z: 109.6}
+  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_Children: []
+  m_Father: {fileID: 1942720828}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -13.405001, y: -0.09, z: 2.1490002}
+--- !u!64 &566883943
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566883941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &566883944
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566883941}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &570000053
 GameObject:
   m_ObjectHideFlags: 0
@@ -18818,7 +18872,7 @@ GameObject:
   - component: {fileID: 664844630}
   - component: {fileID: 664844628}
   m_Layer: 8
-  m_Name: Spawn Area 1
+  m_Name: Spawn Area 4
   m_TagString: SpawnArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18850,7 +18904,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1942720828}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -5.098, y: 0, z: 0}
 --- !u!33 &664844630
 MeshFilter:
@@ -22633,11 +22687,13 @@ MonoBehaviour:
     type: 3}
   spawnArea:
   - {fileID: 717747708}
-  - {fileID: 664844627}
-  - {fileID: 1994648082}
   - {fileID: 1932932923}
   - {fileID: 987883906}
   - {fileID: 1205000793}
+  - {fileID: 664844627}
+  - {fileID: 1994648082}
+  - {fileID: 566883941}
+  - {fileID: 925570115}
   m_tempDist: 0
   isOver: 0
 --- !u!114 &794411878
@@ -26435,6 +26491,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e2e59cbc04eab4a982218df54ce70b, type: 3}
+--- !u!1 &925570115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 925570116}
+  - component: {fileID: 925570118}
+  - component: {fileID: 925570117}
+  m_Layer: 8
+  m_Name: Spawn Area 7
+  m_TagString: SpawnArea
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &925570116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925570115}
+  m_LocalRotation: {x: -0.06503168, y: 0.113677174, z: -0.008807359, w: 0.99134797}
+  m_LocalPosition: {x: -67.198, y: 8.03, z: 146.451}
+  m_LocalScale: {x: 13.0594845, y: 1, z: 16.468307}
+  m_Children: []
+  m_Father: {fileID: 1942720828}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -7.293, y: 13.202001, z: -1.863}
+--- !u!64 &925570117
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925570115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &925570118
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925570115}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &927048751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28498,7 +28608,7 @@ GameObject:
   - component: {fileID: 987883909}
   - component: {fileID: 987883908}
   m_Layer: 8
-  m_Name: Spawn Area 4
+  m_Name: Spawn Area 2
   m_TagString: SpawnArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28516,7 +28626,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1942720828}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -3.144, y: 0.054, z: -0.503}
 --- !u!64 &987883908
 MeshCollider:
@@ -35000,7 +35110,7 @@ GameObject:
   - component: {fileID: 1205000796}
   - component: {fileID: 1205000795}
   m_Layer: 8
-  m_Name: Spawn Area 5
+  m_Name: Spawn Area 3
   m_TagString: SpawnArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35018,7 +35128,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1942720828}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -3.144, y: 0.054, z: -0.503}
 --- !u!64 &1205000795
 MeshCollider:
@@ -55817,7 +55927,7 @@ GameObject:
   - component: {fileID: 1932932926}
   - component: {fileID: 1932932925}
   m_Layer: 8
-  m_Name: Spawn Area 3
+  m_Name: Spawn Area 1
   m_TagString: SpawnArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55835,7 +55945,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1942720828}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -3.144, y: 0.054, z: -0.503}
 --- !u!64 &1932932925
 MeshCollider:
@@ -56141,11 +56251,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 717747709}
-  - {fileID: 664844629}
-  - {fileID: 1994648083}
   - {fileID: 1932932924}
   - {fileID: 987883907}
   - {fileID: 1205000794}
+  - {fileID: 664844629}
+  - {fileID: 1994648083}
+  - {fileID: 566883942}
+  - {fileID: 925570116}
   m_Father: {fileID: 794411876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57612,7 +57724,7 @@ GameObject:
   - component: {fileID: 1994648085}
   - component: {fileID: 1994648084}
   m_Layer: 8
-  m_Name: Spawn Area 2
+  m_Name: Spawn Area 5
   m_TagString: SpawnArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57630,7 +57742,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1942720828}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -3.7940001, y: 0.26900002, z: 2.095}
 --- !u!64 &1994648084
 MeshCollider:

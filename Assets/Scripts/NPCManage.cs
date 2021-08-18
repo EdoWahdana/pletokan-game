@@ -253,10 +253,17 @@ public class NPCManage : MonoBehaviour
     private void SpawnEnemy()
     {
         enemies = new GameObject[countEnemy];
+
+        int spawnLength;
+        switch (level){
+            case 0: case 1: case 2: case 3: case 4: case 5: spawnLength = spawnArea.Length-2; break;
+            case 6: case 7: case 8: spawnLength = spawnArea.Length; break;
+            default: spawnLength = 0; break;
+        }
         
         for(int i=0; i<countEnemy; i++){
             //Random Spawning Area
-            int r = Random.Range(0, spawnArea.Length);
+            int r = Random.Range(0, spawnLength);
             Collider collider = spawnArea[r].GetComponent<MeshCollider>();
             Bounds bounds = collider.bounds;
 
