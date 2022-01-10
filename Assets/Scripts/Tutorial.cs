@@ -44,7 +44,7 @@ public class Tutorial : MonoBehaviour
     public GameObject popUpEndGame;
     private float popUpTimeEndGame = 6f;
 
-    private int targetCount = 6;
+    private int targetCount = 2;
 
     private int startAmmo = 1;
     private int ammo;
@@ -253,6 +253,11 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+  public void Skip()
+  {
+    PlayerPrefs.SetInt("indextimeline", 1);
+    SceneManager.LoadScene("CutScene");
+  }
 
     public void Shoot()
     {
